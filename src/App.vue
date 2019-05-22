@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <global-component />
+    <Test1 />
+    <div id="1234">{{ hello }}</div>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -7,11 +10,19 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Test1 from './components/Test1.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    Test1
+  },
+  data() {
+    window.test = this;
+    return {
+      hello: 'hello world world'
+    }
   }
 }
 </script>
