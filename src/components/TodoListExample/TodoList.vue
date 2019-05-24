@@ -1,28 +1,5 @@
 <template>
     <div>
-        <ol type="1" start="1">
-            <h1>
-                <li>Template Syntax: </li>
-            </h1>
-            <div class="example">
-                <button v-bind:id="ex1.dynamicId" v-bind:disabled="ex1.isButtonDisabled">{{ ex1.message }}</button>
-                <br><br>
-                <div v-html="ex1.htmlStr"></div>
-                <br>
-                <div v-if="ex1.exIf">This is v-if</div>
-                <div v-else>This is v-else</div>
-                <br>
-                <div v-on:click="exOnClick">This is v-on</div>
-                <br>
-                <div v-for="val in ex1.exFor" v-html="val"/>
-            </div>
-            <h1>
-                <li>Class and Style Bindings:</li>
-            </h1>
-            <div class="static example"
-             v-bind:class="{ active: ex2.isActive, 'text-danger': ex2.hasError }"
-             v-bind:style="{ color: ex2.activeColor, fontSize: '24px' }">This is v-bind:class & style</div>
-        </ol>
         <div style="height: 30px;"></div>
         <BaseInputText 
             v-model="singleFileComponentsSample.newTodoText"
@@ -60,19 +37,6 @@ export default {
     },
     data () {
         return {
-            ex1: {
-                htmlStr: "This is v-html",
-                message: "#text",
-                exIf: false,
-                dynamicId: 'testButton',
-                isButtonDisabled: false,
-                exFor: [1, 2, 3, 4]
-            },
-            ex2: {
-                isActive: true,
-                hasError: false,
-                activeColor: 'green'
-            },
             singleFileComponentsSample: {
                 newTodoText: '',
                 todos: [
