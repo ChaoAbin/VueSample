@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <div style="height: 30px;"></div>
+    <div id="todoList">
+        <h1>My Todo App!</h1>
         <BaseInputText 
             v-model="singleFileComponentsSample.newTodoText"
             :keyUpFun="addTodoOnKeyUpFun"
             @keydown.enter="addTodo"
-            @blur="testBlur"
+            @blur="onBlur"
             @remove="removeTodo"
         />
         <ul v-if="singleFileComponentsSample.todos.length">
@@ -57,10 +57,7 @@ export default {
         }
     },
     methods: {
-        exOnClick(event) {
-            alert('v-on on click');
-        },
-        testBlur (event) {
+        onBlur (event) {
             console.log('testBlur: ', event);
         },
         addTodo () {
@@ -94,11 +91,13 @@ export default {
 </script>
 
 <style>
-    .example {
-        width: 90%;
-        padding: 20px;
-        background-color: rgba(0,0,0,0.1);
-        border-radius: 5px;
-        border: 1px solid gray;
+    #todoList {
+        max-width: 400px;
+        margin: 0 auto;
+        line-height: 1.4;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: $vue-blue;
     }
 </style>
